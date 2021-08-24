@@ -5,9 +5,54 @@
     --white: #FFFFFF;
     --color-accent: #FF3700;
     --color-text: #555555;
+    --color-label: #707070;
+    --color-border: #DEDEDE;
 
     --line-global: 20px;
     --gutter-global: calc(var(--line-global) * 2);
+
+    --body-font-size: 15px;
+    --label-font-size: 12px;
+
+    --standard-border: 1px solid var(--color-border);
+}
+
+/* The styles from reset-input */
+button,
+.styled-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  text-align: left;
+}
+
+.styled-select select {
+  width: 100%;
+  font-size: var(--body-font-size);
+  line-height: var(--line-global);
+  padding: var(--line-global);
+  border: var(--black-border);
+}
+
+button {
+  width: 100%;
+  font-size: var(--body-font-size);
+  line-height: var(--line-global);
+  padding: var(--line-global);
+  background: var(--black);
+  color: var(--white);
+  background-color: var(--color-accent);
 }
 
 /* Base */
@@ -26,13 +71,58 @@ body {
 }
 
 body {
+    font-size: var(--body-font-size);
     background-color: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, ul, ol {
     margin: 0;
     padding: 0;
+    font-weight: 400;
 }
+
+/* Style Guide */
+.headline-big {
+    font-size: 22vw;
+    line-height: 1;
+}
+
+h2 {
+    font-size: calc(var(--body-font-size) *2);
+    line-height: calc(var(--line-global) * 2);
+}
+
+h3 {
+    font-size: var(--body-font-size);
+    line-height: var(--line-global);
+}
+
+p, ul, ol {
+    font-size: var(--body-font-size);
+    line-height: var(--line-global);
+    color: var(--color-text);
+}
+
+
+.list-with-stroke {
+    list-style-type: none;
+}
+
+.list-with-stroke li {
+    border-top: var(--standard-border);
+    padding: var(--line-global) 0;    
+}
+
+
+.list-with-stroke li:last-child {
+    border-bottom: var(--standard-border);
+}
+
+label {
+    font-size: var(--label-font-size);
+    color: var(--color-label);
+}
+
 
 
 /* Utility Classes */
@@ -70,7 +160,6 @@ h1, h2, h3, h4, h5, h6, p {
     left: 0;
     top: var(--gutter-global);
     bottom: var(--gutter-global);
-    background: wheat;
     width: 50%;
 }
 
@@ -96,4 +185,16 @@ h1, h2, h3, h4, h5, h6, p {
 .single-product-image {
     width: 100%;
     height: 100%;
+}
+
+.description-content {
+    margin-top: var(--line-global);
+}
+
+.form-wrapper {
+    padding-top: calc(var(--line-global) * 3);
+}
+
+#add-to-cart-button .product-price {
+    float: right;
 }
