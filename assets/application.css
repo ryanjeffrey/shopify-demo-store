@@ -105,6 +105,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     font-weight: 400;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Style Guide */
 .headline-big {
     font-size: 22vw;
@@ -195,8 +199,49 @@ label {
     object-fit: cover;
 }
 
-/* Index Styles */
+/* Global Styles */
+.link-to-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: var(--gutter-global);
+    color: var(--color-text);
+}
 
+.link-to-cart .cart-item-count {
+    display: block;
+    font-size: 0px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-border);
+    border-radius: 100%;
+    margin-top: 4px;
+}
+
+.link-to-cart .cart-text {
+    display: none;
+    position: absolute;
+    right: calc(100% - var(--gutter-global) / 2);
+    top: var(--gutter-global);
+    white-space: nowrap;
+}
+
+.link-to-cart.cart-filled .cart-item-count {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent);
+    font-size: var(--label-font-size);
+    line-height: var(--line-global);
+    color: var(--white);
+    text-align: center;
+    margin-top: 0;
+}
+
+.link-to-cart:hover .cart-text {
+    display: block;
+}
+
+/* Index Styles */
 
 #product-info {
     grid-template-rows: minmax(max-content, auto) minmax(min-content, max-content);
