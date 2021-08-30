@@ -15,6 +15,7 @@
     --label-font-size: 12px;
 
     --standard-border: 1px solid var(--color-border);
+    --black-border: 1px solid var(--black);
 }
 
 /* The styles from reset-input */
@@ -37,12 +38,35 @@ button,
   text-align: left;
 }
 
+.styled-select {
+    position: relative;
+}
+
 .styled-select select {
   width: 100%;
   font-size: var(--body-font-size);
   line-height: var(--line-global);
   padding: var(--line-global);
   border: var(--black-border);
+}
+
+.styled-select .select-arrow {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: calc(var(--line-global) * 3);
+    background: var(--white);
+    text-align: center;
+    line-height: calc(var(--line-global) * 3);
+    border-left: var(--black-border);
+    pointer-events: none;
+}
+
+.styled-select .select-arrow img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
 }
 
 button {
@@ -85,6 +109,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 .headline-big {
     font-size: 22vw;
     line-height: 1;
+    font-weight: 300;
 }
 
 h2 {
@@ -106,6 +131,7 @@ p, ul, ol {
 
 .list-with-stroke {
     list-style-type: none;
+    font-weight: 300;
 }
 
 .list-with-stroke li {
@@ -151,7 +177,7 @@ label {
 .main-content {
     min-height: 100vh;
     padding: var(--gutter-global);
-    width: 50%;
+    width: calc(50% + var(--gutter-global)/2);
     margin-left: auto;
 }
 
@@ -160,7 +186,7 @@ label {
     left: 0;
     top: var(--gutter-global);
     bottom: var(--gutter-global);
-    width: 50%;
+    width: calc(50% - var(--gutter-global)/2);
 }
 
 .sticky-side-image img {
@@ -170,12 +196,14 @@ label {
 }
 
 /* Index Styles */
-#page-index {
 
-}
 
 #product-info {
     grid-template-rows: minmax(max-content, auto) minmax(min-content, max-content);
+}
+
+#product-info-content {
+    grid-row-gap: calc(var(--gutter-global) / 2);
 }
 
 .headline {
@@ -193,6 +221,10 @@ label {
 
 .form-wrapper {
     padding-top: calc(var(--line-global) * 3);
+}
+
+#add-to-cart-form {
+    margin-top: calc(var(--line-global));
 }
 
 #add-to-cart-button .product-price {
