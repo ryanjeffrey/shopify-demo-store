@@ -441,3 +441,8 @@ td:last-child {
 #cart-support p {
     color: inherit;
 }
+
+/* 404 Styles */
+#content-404 a {
+    color: var(--black);
+}
